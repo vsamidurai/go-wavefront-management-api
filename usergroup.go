@@ -60,9 +60,6 @@ func (g UserGroups) Create(userGroup *UserGroup) error {
 	if userGroup.Name == "" {
 		return fmt.Errorf("name must be specified when creating a usergroup")
 	}
-	//if len(userGroup.Permissions) == 0 {
-	//	return fmt.Errorf("permissions must be specified when creating a usergroup")
-	//}
 
 	return basicCrud(g.client, "POST", baseUserGroupPath, userGroup, nil)
 }
